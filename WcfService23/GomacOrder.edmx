@@ -1,0 +1,1392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Proba.Store" Alias="Self" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="ProbaStoreContainer">
+          <EntitySet Name="AVCODETABLE" EntityType="Proba.Store.AVCODETABLE" store:Type="Tables" Schema="GOMAC_BASE_OMS" />
+          <EntitySet Name="AVINCENTIVELOG" EntityType="Proba.Store.AVINCENTIVELOG" store:Type="Tables" store:Schema="GOMAC_BASE_OMS" store:Name="AVINCENTIVELOG">
+            <DefiningQuery>SELECT 
+      "AVINCENTIVELOG"."CUSTACCOUNT" AS "CUSTACCOUNT", 
+      "AVINCENTIVELOG"."AVLOGTYPE" AS "AVLOGTYPE", 
+      "AVINCENTIVELOG"."AVPOINT" AS "AVPOINT", 
+      "AVINCENTIVELOG"."AVAMOUNT" AS "AVAMOUNT", 
+      "AVINCENTIVELOG"."SALESID" AS "SALESID", 
+      "AVINCENTIVELOG"."AVREMARK" AS "AVREMARK", 
+      "AVINCENTIVELOG"."AVPOINTCODE" AS "AVPOINTCODE", 
+      "AVINCENTIVELOG"."AVRECOMMENDEDREP" AS "AVRECOMMENDEDREP", 
+      "AVINCENTIVELOG"."AVCAMPAIGNID" AS "AVCAMPAIGNID", 
+      "AVINCENTIVELOG"."AVMVNOPOINTSSOURCE" AS "AVMVNOPOINTSSOURCE", 
+      "AVINCENTIVELOG"."MODIFIEDDATE" AS "MODIFIEDDATE", 
+      "AVINCENTIVELOG"."MODIFIEDBY" AS "MODIFIEDBY", 
+      "AVINCENTIVELOG"."CREATEDDATE" AS "CREATEDDATE", 
+      "AVINCENTIVELOG"."CREATEDBY" AS "CREATEDBY", 
+      "AVINCENTIVELOG"."DATAAREAID" AS "DATAAREAID", 
+      "AVINCENTIVELOG"."AVADAPTERID" AS "AVADAPTERID", 
+      "AVINCENTIVELOG"."AVTAG" AS "AVTAG", 
+      "AVINCENTIVELOG"."AVTAGVALUE" AS "AVTAGVALUE"
+      FROM "GOMAC_BASE_OMS"."AVINCENTIVELOG" "AVINCENTIVELOG"</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="AVINCENTIVETOTAL" EntityType="Proba.Store.AVINCENTIVETOTAL" store:Type="Tables" Schema="GOMAC_BASE_OMS" />
+          <EntitySet Name="AVREPCLUBLEVELHISTORY" EntityType="Proba.Store.AVREPCLUBLEVELHISTORY" store:Type="Tables" Schema="GOMAC_BASE_OMS" />
+          <EntitySet Name="AVREPCLUBTRANLHISTORY" EntityType="Proba.Store.AVREPCLUBTRANLHISTORY" store:Type="Tables" Schema="GOMAC_BASE_OMS" />
+          <EntitySet Name="AVSHORTPENDINGLINES" EntityType="Proba.Store.AVSHORTPENDINGLINES" store:Type="Tables" Schema="GOMAC_BASE_OMS" />
+          <EntitySet Name="AVUNBILLEDORDERLINES" EntityType="Proba.Store.AVUNBILLEDORDERLINES" store:Type="Tables" Schema="GOMAC_BASE_OMS" />
+          <EntitySet Name="AVUNBILLEDORDERS" EntityType="Proba.Store.AVUNBILLEDORDERS" store:Type="Tables" Schema="GOMAC_BASE_OMS" />
+          <EntitySet Name="PRICEDISCTABLE" EntityType="Proba.Store.PRICEDISCTABLE" store:Type="Tables" Schema="GOMAC_BASE_OMS" />
+        </EntityContainer>
+        <EntityType Name="AVCODETABLE">
+          <Key>
+            <PropertyRef Name="AVCODEID" />
+            <PropertyRef Name="AVCODETYPE" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="AVDESCRIPTION" Type="varchar2" Nullable="false" MaxLength="100" />
+          <Property Name="AVCODEID" Type="varchar2" Nullable="false" MaxLength="200" />
+          <Property Name="AVPARENTID" Type="varchar2" Nullable="false" MaxLength="200" />
+          <Property Name="AVCODETYPE" Type="number" Nullable="false" Precision="10" />
+          <Property Name="USERID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="DATAAREAID" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="MODIFIEDDATE" Type="date" Nullable="false" />
+          <Property Name="MODIFIEDTIME" Type="number" Nullable="false" Precision="10" />
+          <Property Name="MODIFIEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="CREATEDDATE" Type="date" Nullable="false" />
+          <Property Name="CREATEDTIME" Type="number" Nullable="false" Precision="10" />
+          <Property Name="CREATEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'GOMAC_BASE_OMS.AVINCENTIVELOG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="AVINCENTIVELOG">
+          <Key>
+            <PropertyRef Name="CUSTACCOUNT" />
+            <PropertyRef Name="AVLOGTYPE" />
+            <PropertyRef Name="AVPOINT" />
+            <PropertyRef Name="AVAMOUNT" />
+            <PropertyRef Name="SALESID" />
+            <PropertyRef Name="AVREMARK" />
+            <PropertyRef Name="AVPOINTCODE" />
+            <PropertyRef Name="AVRECOMMENDEDREP" />
+            <PropertyRef Name="AVCAMPAIGNID" />
+            <PropertyRef Name="AVMVNOPOINTSSOURCE" />
+            <PropertyRef Name="MODIFIEDDATE" />
+            <PropertyRef Name="MODIFIEDBY" />
+            <PropertyRef Name="CREATEDDATE" />
+            <PropertyRef Name="CREATEDBY" />
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="AVADAPTERID" />
+            <PropertyRef Name="AVTAG" />
+            <PropertyRef Name="AVTAGVALUE" />
+          </Key>
+          <Property Name="CUSTACCOUNT" Type="varchar2" Nullable="false" MaxLength="12" />
+          <Property Name="AVLOGTYPE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVPOINT" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVAMOUNT" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="SALESID" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="AVREMARK" Type="varchar2" Nullable="false" MaxLength="1000" />
+          <Property Name="AVPOINTCODE" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVRECOMMENDEDREP" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVCAMPAIGNID" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="AVMVNOPOINTSSOURCE" Type="number" Nullable="false" Precision="10" />
+          <Property Name="MODIFIEDDATE" Type="date" Nullable="false" />
+          <Property Name="MODIFIEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="CREATEDDATE" Type="date" Nullable="false" />
+          <Property Name="CREATEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="DATAAREAID" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="AVADAPTERID" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVTAG" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVTAGVALUE" Type="varchar2" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="AVINCENTIVETOTAL">
+          <Key>
+            <PropertyRef Name="CUSTACCOUNT" />
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="AVADAPTERID" />
+          </Key>
+          <Property Name="CUSTACCOUNT" Type="varchar2" Nullable="false" MaxLength="12" />
+          <Property Name="AVPOINTTOTAL" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVAMOUNTTOTAL" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVACTIVE" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVLIMIT" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVPOINTCODE" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="DATAAREAID" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="MODIFIEDDATE" Type="date" Nullable="false" />
+          <Property Name="MODIFIEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="CREATEDDATE" Type="date" Nullable="false" />
+          <Property Name="CREATEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="AVADAPTERID" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVTAG" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVTAGVALUE" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVADAPTERTYPE" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVACCUMTYPE" Type="number" Nullable="false" Precision="10" />
+        </EntityType>
+        <EntityType Name="AVREPCLUBLEVELHISTORY">
+          <Key>
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="REP_CLUB_TYP" />
+            <PropertyRef Name="CUSTACCOUNT" />
+            <PropertyRef Name="REP_CLUB_YR_NR" />
+            <PropertyRef Name="ACHVD_LVL_CD" />
+          </Key>
+          <Property Name="DATAAREAID" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="REP_CLUB_TYP" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="CUSTACCOUNT" Type="varchar2" Nullable="false" MaxLength="12" />
+          <Property Name="REP_CLUB_YR_NR" Type="number" Nullable="false" Precision="4" />
+          <Property Name="ACHVD_LVL_CD" Type="number" Nullable="false" Precision="4" />
+          <Property Name="ACHVD_CMPGN" Type="varchar2" MaxLength="6" />
+          <Property Name="MODIFIEDDATE" Type="date" Nullable="false" />
+          <Property Name="MODIFIEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="CREATEDDATE" Type="date" Nullable="false" />
+          <Property Name="CREATEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="AVREPCLUBTRANLHISTORY">
+          <Key>
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="CUSTACCOUNT" />
+            <PropertyRef Name="REP_CLUB_TYP" />
+            <PropertyRef Name="REP_CLUB_YR_NR" />
+            <PropertyRef Name="RECID" />
+          </Key>
+          <Property Name="DATAAREAID" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="CUSTACCOUNT" Type="varchar2" Nullable="false" MaxLength="12" />
+          <Property Name="REP_CLUB_TYP" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="REP_CLUB_YR_NR" Type="number" Nullable="false" Precision="4" />
+          <Property Name="RECID" Type="number" Nullable="false" Precision="20" />
+          <Property Name="ADJST_AMT" Type="number" Nullable="false" Precision="15" Scale="3" />
+          <Property Name="MODIFIEDDATE" Type="date" Nullable="false" />
+          <Property Name="MODIFIEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="CREATEDDATE" Type="date" Nullable="false" />
+          <Property Name="CREATEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="AVSHORTPENDINGLINES">
+          <Key>
+            <PropertyRef Name="CUSTACCOUNT" />
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="RECID" />
+          </Key>
+          <Property Name="CUSTACCOUNT" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVORDERNUM" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVPOVERSIONNUM" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="AVCAMPAIGNSTORED" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="AVCAMPAIGNOFPRICE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="AVBROCHURELINENUM" Type="number" Nullable="false" Precision="10" />
+          <Property Name="ITEMID" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVITEMSOURCE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="QTYORDERED" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCUSTPRICETOTAL" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCUSTUNITPRICE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVNUMBERFOR" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCOMMISSIONRATE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVADJUSTREASONCODE" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="AVREPLACEMENTLINENUM" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVREPLACEMENTITEMID" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="SALESID" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="CURRENCYCODE" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="SEQNUM" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVBONUSCOMMISSIONRATE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVNETSALES" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVAWARDSALES" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVDOUBLEDOLLARS" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVORDERSIZE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVITEMSTATUSCODE" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVCONSIGNMENTWAREHOUSEID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVOFFERID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="INVENTTRANSID" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVDIMIDCODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVITEMCLASSID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVCOMPONENTCOUNT" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVSETCODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVPRODUCTTYPE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="SCRAP" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVRETURNLINERECID" Type="number" Nullable="false" Precision="10" />
+          <Property Name="INVENTDIMID" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVHANDLINGTAG1" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVSETLINESEQUENCENUM" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVINVOICEDESC" Type="varchar2" Nullable="false" MaxLength="1000" />
+          <Property Name="AVITEMSOURCEORIGINAL" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVINCENTIVEID" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVITEMSOURCERETURN" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVACTION" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVSHORTRECID" Type="number" Nullable="false" Precision="10" />
+          <Property Name="MODIFIEDDATE" Type="date" Nullable="false" />
+          <Property Name="MODIFIEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="CREATEDDATE" Type="date" Nullable="false" />
+          <Property Name="CREATEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="DATAAREAID" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="AVDISCAMT" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="TAXRATE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="RETURNDOCNUM" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVEXTERNALORDERNUM" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVPERSONALUSE" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="AVRETURNSFORMDOCNUM" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVPAYOFFINCID" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVCUSTUNITPRICEPRG" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCUSTPRICETOTALPRG" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVPAICOLOR" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="AVPAIDATE" Type="date" Nullable="false" />
+          <Property Name="AVREPLACEMENTCAMPAIGN" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="AVREPLACEMENTCUSTUNITPRICE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVHANDLINGTAG3" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVNBROFCAMPAIGNSSHORTED" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVNBROFTIMESSHORTED" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVPRIZEVALUE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVTRANSFERTODIMIDCODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVSPECIALACTION" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVDELETEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="AVDELETEDDATE" Type="date" Nullable="false" />
+          <Property Name="AVSKIPDELETION" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVBACKORDERSOURCE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVREASONCODE" Type="varchar2" Nullable="false" MaxLength="25" />
+          <Property Name="RECID" Type="number" Nullable="false" Precision="20" />
+          <Property Name="AVPENDINGCREDITSTATUSCODE" Type="number" Nullable="false" Precision="10" />
+        </EntityType>
+        <EntityType Name="AVUNBILLEDORDERLINES">
+          <Key>
+            <PropertyRef Name="SALESID" />
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="RECID" />
+          </Key>
+          <Property Name="CUSTACCOUNT" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVORDERNUM" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVPOVERSIONNUM" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="AVCAMPAIGNSTORED" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="AVCAMPAIGNOFPRICE" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="AVBROCHURELINENUM" Type="number" Nullable="false" Precision="10" />
+          <Property Name="ITEMID" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVITEMSOURCE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="QTYORDERED" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCUSTPRICETOTAL" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCUSTUNITPRICE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVNUMBERFOR" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCOMMISSIONRATE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVADJUSTREASONCODE" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="AVREPLACEMENTLINENUM" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVREPLACEMENTITEMID" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="SALESID" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="CURRENCYCODE" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="SEQNUM" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVBONUSCOMMISSIONRATE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVNETSALES" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVAWARDSALES" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVDOUBLEDOLLARS" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVORDERSIZE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVITEMSTATUSCODE" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVCONSIGNMENTWAREHOUSEID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVOFFERID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="INVENTTRANSID" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVDIMIDCODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVITEMCLASSID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVCOMPONENTCOUNT" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVSETCODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVPRODUCTTYPE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="SCRAP" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVRETURNLINERECID" Type="number" Nullable="false" Precision="10" />
+          <Property Name="INVENTDIMID" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVHANDLINGTAG1" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVSETLINESEQUENCENUM" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVINVOICEDESC" Type="varchar2" Nullable="false" MaxLength="1000" />
+          <Property Name="AVITEMSOURCEORIGINAL" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVINCENTIVEID" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVITEMSOURCERETURN" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVACTION" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVSHORTRECID" Type="number" Nullable="false" Precision="10" />
+          <Property Name="MODIFIEDDATE" Type="date" Nullable="false" />
+          <Property Name="MODIFIEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="CREATEDDATE" Type="date" Nullable="false" />
+          <Property Name="CREATEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="DATAAREAID" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="AVDISCAMT" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="TAXRATE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="RETURNDOCNUM" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVEXTERNALORDERNUM" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVPERSONALUSE" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="AVRETURNSFORMDOCNUM" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVPAYOFFINCID" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVCUSTUNITPRICEPRG" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCUSTPRICETOTALPRG" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVPAICOLOR" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="AVPAIDATE" Type="date" Nullable="false" />
+          <Property Name="AVREPLACEMENTCAMPAIGN" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="AVREPLACEMENTCUSTUNITPRICE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVHANDLINGTAG3" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVNBROFCAMPAIGNSSHORTED" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVNBROFTIMESSHORTED" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVPRIZEVALUE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVTRANSFERTODIMIDCODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="RECID" Type="number" Nullable="false" Precision="20" />
+          <Property Name="AVREASONCODE" Type="varchar2" Nullable="false" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="AVUNBILLEDORDERS">
+          <Key>
+            <PropertyRef Name="SALESID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="AVORDERNUM" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVCAMPAIGNOFORDER" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="AVPOVERSIONNUM" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="CUSTACCOUNT" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVMAILPLAN" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="AVORDERSOURCE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVORDERTYPE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVPRIORITYCODE" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="AVORDERSTATUS" Type="varchar2" Nullable="false" MaxLength="8" />
+          <Property Name="AVSHIPIMMEDCODE" Type="varchar2" Nullable="false" MaxLength="8" />
+          <Property Name="ADDRESS" Type="varchar2" Nullable="false" MaxLength="250" />
+          <Property Name="STATE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="ZIPCODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="COUNTRY" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="CURRENCYCODE" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="AVNUMCUSTSERVED" Type="number" Nullable="false" Precision="10" />
+          <Property Name="SALESID" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVORDERRELEASECOMMENTS" Type="varchar2" Nullable="false" MaxLength="255" />
+          <Property Name="AVBILLEDDATE" Type="date" Nullable="false" />
+          <Property Name="AVBILLEDTIME" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVORDERSTATUSCODE" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVCONSIGNMENTWAREHOUSEID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVSALESCHANNEL" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVPENDINGPMTREFERENCE" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVPENDINGPMTEFFDATE" Type="date" Nullable="false" />
+          <Property Name="AVPENDINGPMTAMT" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVREMARKS" Type="varchar2" Nullable="false" MaxLength="1000" />
+          <Property Name="PAYMENT" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVPROMISEDATE" Type="date" Nullable="false" />
+          <Property Name="AVPROMISETIME" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVMISCCHGCODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVORIGINALINVOICEID" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVGROUPCODEID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="MODIFIEDDATE" Type="date" Nullable="false" />
+          <Property Name="MODIFIEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="CREATEDDATE" Type="date" Nullable="false" />
+          <Property Name="CREATEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="DATAAREAID" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="AVEXTERNALORDERNUM" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="AVEXTERNALACCOUNTNUM" Type="number" Nullable="false" Precision="20" />
+          <Property Name="AVFINANCIALORDERTYPE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVSALESTYPE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVBYPASSSAR" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="AVBYPASSCREDITCHECK" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="AVBYPASSCRITMONSUBS" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="AVORDERPROCESSINGCODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVUPDATEADDRESS" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="AVADDRESSFINALDATE" Type="date" Nullable="false" />
+          <Property Name="PERSONALUSEAGREEMENT" Type="varchar2" Nullable="false" MaxLength="1" />
+          <Property Name="AVPENDINGPMTMETHOD" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVADDRESSTYPE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVCDC" Type="varchar2" Nullable="false" MaxLength="12" />
+          <Property Name="AVCITYID" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="AVCOLONIAID" Type="varchar2" Nullable="false" MaxLength="15" />
+          <Property Name="AVCREDITPROCESSTAG" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVCUSTOMERREF" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="AVCUSTPRICETOTAL" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVDELIVERYDATE" Type="date" Nullable="false" />
+          <Property Name="AVDELIVERYINSTRUCTIONTYPE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVORDERINGOPPORTUNITY" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVORIGINALORDERTYPE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVREASONCODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVTRANSDATE" Type="date" Nullable="false" />
+          <Property Name="AVSHIPMENTID" Type="varchar2" Nullable="false" MaxLength="40" />
+          <Property Name="INVENTLOCATION" Type="varchar2" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="PRICEDISCTABLE">
+          <Key>
+            <PropertyRef Name="AVBROCHURELINENUM" />
+            <PropertyRef Name="AVCAMPAIGNID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="AGREEMENT" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="ITEMCODE" Type="number" Nullable="false" Precision="10" />
+          <Property Name="ACCOUNTCODE" Type="number" Nullable="false" Precision="10" />
+          <Property Name="ITEMRELATION" Type="varchar2" Nullable="false" MaxLength="20" />
+          <Property Name="ACCOUNTRELATION" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="QUANTITYAMOUNT" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="FROMDATE" Type="date" Nullable="false" />
+          <Property Name="TODATE" Type="date" Nullable="false" />
+          <Property Name="AMOUNT" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="CURRENCY" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="PERCENT1" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="PERCENT2" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="DELIVERYTIME" Type="number" Nullable="false" Precision="10" />
+          <Property Name="SEARCHAGAIN" Type="number" Nullable="false" Precision="10" />
+          <Property Name="PRICEUNIT" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="RELATION" Type="number" Nullable="false" Precision="10" />
+          <Property Name="UNITID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="MARKUP" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="ALLOCATEMARKUP" Type="number" Nullable="false" Precision="10" />
+          <Property Name="MODULE" Type="number" Nullable="false" Precision="10" />
+          <Property Name="CONFIGID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVBROCHURELINENUM" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVCAMPAIGNID" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="AVITEMCLASSID" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVCUSTUNITPRICE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVPRODUCTTYPE" Type="varchar2" MaxLength="10" />
+          <Property Name="AVBONUSPOINTEARNED" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVLINENUMTYPE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVPRIZEPROGRAMID" Type="varchar2" Nullable="false" MaxLength="6" />
+          <Property Name="AVREDEMPTIONPOINTS" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVPRIZEVALUE" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVPRINTCODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVORDERELIGIBILITY" Type="varchar2" Nullable="false" MaxLength="2" />
+          <Property Name="AVRETURNSURCHARGEPCT" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVRETURNMONITORCODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVPOSEQUENCENUM" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVBROCHURETYPE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVBROCHUREPAGENUM" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVCOMMISIONAMT" Type="number" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVSETCODE" Type="varchar2" Nullable="false" MaxLength="10" />
+          <Property Name="AVCOMPONENTCOUNT" Type="number" Nullable="false" Precision="10" />
+          <Property Name="AVINVOICEDESC" Type="varchar2" Nullable="false" MaxLength="1000" />
+          <Property Name="MODIFIEDDATE" Type="date" Nullable="false" />
+          <Property Name="MODIFIEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="CREATEDDATE" Type="date" Nullable="false" />
+          <Property Name="CREATEDBY" Type="varchar2" Nullable="false" MaxLength="30" />
+          <Property Name="DATAAREAID" Type="varchar2" Nullable="false" MaxLength="3" />
+          <Property Name="AVHANDLINGTAG4" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG5" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG6" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG7" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG8" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG9" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG10" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG3" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG2" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG1" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG11" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG12" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG13" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG14" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG15" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG16" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG17" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG18" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG19" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG20" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG21" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG22" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG23" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG24" Type="varchar2" MaxLength="10" />
+          <Property Name="AVHANDLINGTAG25" Type="varchar2" MaxLength="10" />
+          <Property Name="PAYMTERMID" Type="varchar2" MaxLength="25" />
+          <Property Name="AVAMOUNT1" Type="number" Precision="32" Scale="16" />
+          <Property Name="AVAMOUNT2" Type="number" Precision="32" Scale="16" />
+          <Property Name="AVAMOUNT3" Type="number" Precision="32" Scale="16" />
+          <Property Name="AVAMOUNT4" Type="number" Precision="32" Scale="16" />
+          <Property Name="AVAMOUNT5" Type="number" Precision="32" Scale="16" />
+        </EntityType>
+        <Function Name="DATAAREAID2MARKET" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="GOMAC_BASE_OMS">
+          <Parameter Name="MARKET" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="UF_GET_GM_SEQNO" ReturnType="number" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="GOMAC_BASE_OMS">
+          <Parameter Name="AC_COMPANY" Type="varchar2" Mode="In" />
+          <Parameter Name="AC_NAME" Type="varchar2" Mode="In" />
+          <Parameter Name="LN_INCREMENT" Type="number" Mode="In" />
+          <Parameter Name="LN_ISGETRECID" Type="number" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Proba" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="NativeEntities" annotation:LazyLoadingEnabled="true">
+
+          <EntitySet Name="AVCODETABLE" EntityType="Proba.AVCODETABLE" />
+          <EntitySet Name="AVSHORTPENDINGLINES" EntityType="Proba.AVSHORTPENDINGLINES" />
+          <EntitySet Name="AVUNBILLEDORDERLINES" EntityType="Proba.AVUNBILLEDORDERLINES" />
+          <EntitySet Name="AVUNBILLEDORDERS" EntityType="Proba.AVUNBILLEDORDERS" />
+          <EntitySet Name="PRICEDISCTABLE" EntityType="Proba.PRICEDISCTABLE" />
+          <EntitySet Name="AVINCENTIVELOG" EntityType="Proba.AVINCENTIVELOG" />
+          <EntitySet Name="AVINCENTIVETOTAL" EntityType="Proba.AVINCENTIVETOTAL" />
+          <EntitySet Name="AVREPCLUBLEVELHISTORY" EntityType="Proba.AVREPCLUBLEVELHISTORY" />
+          <EntitySet Name="AVREPCLUBTRANLHISTORY" EntityType="Proba.AVREPCLUBTRANLHISTORY" />
+
+          
+        </EntityContainer>
+        <EntityType Name="AVCODETABLE">
+          <Key>
+            <PropertyRef Name="AVCODEID" />
+            <PropertyRef Name="AVCODETYPE" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="AVDESCRIPTION" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="AVCODEID" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="AVPARENTID" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="AVCODETYPE" Type="Int32" Nullable="false" />
+          <Property Name="USERID" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="DATAAREAID" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Nullable="false" />
+          <Property Name="MODIFIEDTIME" Type="Int32" Nullable="false" />
+          <Property Name="MODIFIEDBY" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATEDTIME" Type="Int32" Nullable="false" />
+          <Property Name="CREATEDBY" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="AVSHORTPENDINGLINES">
+          <Key>
+            <PropertyRef Name="CUSTACCOUNT" />
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="RECID" />
+          </Key>
+          <Property Name="CUSTACCOUNT" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVORDERNUM" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVPOVERSIONNUM" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="AVCAMPAIGNSTORED" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="AVCAMPAIGNOFPRICE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="AVBROCHURELINENUM" Type="Int32" Nullable="false" />
+          <Property Name="ITEMID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVITEMSOURCE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QTYORDERED" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCUSTPRICETOTAL" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCUSTUNITPRICE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVNUMBERFOR" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCOMMISSIONRATE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVADJUSTREASONCODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="AVREPLACEMENTLINENUM" Type="Int32" Nullable="false" />
+          <Property Name="AVREPLACEMENTITEMID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SALESID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CURRENCYCODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="SEQNUM" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVBONUSCOMMISSIONRATE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVNETSALES" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVAWARDSALES" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVDOUBLEDOLLARS" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVORDERSIZE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVITEMSTATUSCODE" Type="Int32" Nullable="false" />
+          <Property Name="AVCONSIGNMENTWAREHOUSEID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVOFFERID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="INVENTTRANSID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVDIMIDCODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVITEMCLASSID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVCOMPONENTCOUNT" Type="Int32" Nullable="false" />
+          <Property Name="AVSETCODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVPRODUCTTYPE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SCRAP" Type="Int32" Nullable="false" />
+          <Property Name="AVRETURNLINERECID" Type="Int32" Nullable="false" />
+          <Property Name="INVENTDIMID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG1" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVSETLINESEQUENCENUM" Type="Int32" Nullable="false" />
+          <Property Name="AVINVOICEDESC" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="AVITEMSOURCEORIGINAL" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVINCENTIVEID" Type="Int32" Nullable="false" />
+          <Property Name="AVITEMSOURCERETURN" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVACTION" Type="Int32" Nullable="false" />
+          <Property Name="AVSHORTRECID" Type="Int32" Nullable="false" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Nullable="false" />
+          <Property Name="MODIFIEDBY" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATEDBY" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="DATAAREAID" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="AVDISCAMT" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="TAXRATE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="RETURNDOCNUM" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVEXTERNALORDERNUM" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVPERSONALUSE" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="AVRETURNSFORMDOCNUM" Type="Int32" Nullable="false" />
+          <Property Name="AVPAYOFFINCID" Type="Int32" Nullable="false" />
+          <Property Name="AVCUSTUNITPRICEPRG" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCUSTPRICETOTALPRG" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVPAICOLOR" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="AVPAIDATE" Type="DateTime" Nullable="false" />
+          <Property Name="AVREPLACEMENTCAMPAIGN" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="AVREPLACEMENTCUSTUNITPRICE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVHANDLINGTAG3" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVNBROFCAMPAIGNSSHORTED" Type="Int32" Nullable="false" />
+          <Property Name="AVNBROFTIMESSHORTED" Type="Int32" Nullable="false" />
+          <Property Name="AVPRIZEVALUE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVTRANSFERTODIMIDCODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVSPECIALACTION" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVDELETEDBY" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="AVDELETEDDATE" Type="DateTime" Nullable="false" />
+          <Property Name="AVSKIPDELETION" Type="Int32" Nullable="false" />
+          <Property Name="AVBACKORDERSOURCE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVREASONCODE" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="RECID" Type="Decimal" Nullable="false" Precision="20" Scale="0" />
+          <Property Name="AVPENDINGCREDITSTATUSCODE" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AVUNBILLEDORDERLINES">
+          <Key>
+            <PropertyRef Name="SALESID" />
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="RECID" />
+          </Key>
+          <Property Name="CUSTACCOUNT" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVORDERNUM" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVPOVERSIONNUM" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="AVCAMPAIGNSTORED" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="AVCAMPAIGNOFPRICE" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="AVBROCHURELINENUM" Type="Int32" Nullable="false" />
+          <Property Name="ITEMID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVITEMSOURCE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QTYORDERED" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCUSTPRICETOTAL" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCUSTUNITPRICE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVNUMBERFOR" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCOMMISSIONRATE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVADJUSTREASONCODE" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="AVREPLACEMENTLINENUM" Type="Int32" Nullable="false" />
+          <Property Name="AVREPLACEMENTITEMID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="SALESID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="CURRENCYCODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="SEQNUM" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVBONUSCOMMISSIONRATE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVNETSALES" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVAWARDSALES" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVDOUBLEDOLLARS" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVORDERSIZE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVITEMSTATUSCODE" Type="Int32" Nullable="false" />
+          <Property Name="AVCONSIGNMENTWAREHOUSEID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVOFFERID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="INVENTTRANSID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVDIMIDCODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVITEMCLASSID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVCOMPONENTCOUNT" Type="Int32" Nullable="false" />
+          <Property Name="AVSETCODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVPRODUCTTYPE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="SCRAP" Type="Int32" Nullable="false" />
+          <Property Name="AVRETURNLINERECID" Type="Int32" Nullable="false" />
+          <Property Name="INVENTDIMID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG1" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVSETLINESEQUENCENUM" Type="Int32" Nullable="false" />
+          <Property Name="AVINVOICEDESC" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="AVITEMSOURCEORIGINAL" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVINCENTIVEID" Type="Int32" Nullable="false" />
+          <Property Name="AVITEMSOURCERETURN" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVACTION" Type="Int32" Nullable="false" />
+          <Property Name="AVSHORTRECID" Type="Int32" Nullable="false" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Nullable="false" />
+          <Property Name="MODIFIEDBY" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATEDBY" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="DATAAREAID" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="AVDISCAMT" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="TAXRATE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="RETURNDOCNUM" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVEXTERNALORDERNUM" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVPERSONALUSE" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="AVRETURNSFORMDOCNUM" Type="Int32" Nullable="false" />
+          <Property Name="AVPAYOFFINCID" Type="Int32" Nullable="false" />
+          <Property Name="AVCUSTUNITPRICEPRG" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVCUSTPRICETOTALPRG" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVPAICOLOR" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="AVPAIDATE" Type="DateTime" Nullable="false" />
+          <Property Name="AVREPLACEMENTCAMPAIGN" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="AVREPLACEMENTCUSTUNITPRICE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVHANDLINGTAG3" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVNBROFCAMPAIGNSSHORTED" Type="Int32" Nullable="false" />
+          <Property Name="AVNBROFTIMESSHORTED" Type="Int32" Nullable="false" />
+          <Property Name="AVPRIZEVALUE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVTRANSFERTODIMIDCODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="RECID" Type="Decimal" Nullable="false" Precision="20" Scale="0" />
+          <Property Type="String" Name="AVREASONCODE" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AVUNBILLEDORDERS">
+          <Key>
+            <PropertyRef Name="SALESID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="AVORDERNUM" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVCAMPAIGNOFORDER" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="AVPOVERSIONNUM" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="CUSTACCOUNT" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVMAILPLAN" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="AVORDERSOURCE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVORDERTYPE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVPRIORITYCODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="AVORDERSTATUS" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="AVSHIPIMMEDCODE" Type="String" Nullable="false" MaxLength="8" Unicode="false" FixedLength="false" />
+          <Property Name="ADDRESS" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="STATE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ZIPCODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="COUNTRY" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="CURRENCYCODE" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="AVNUMCUSTSERVED" Type="Int32" Nullable="false" />
+          <Property Name="SALESID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVORDERRELEASECOMMENTS" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="AVBILLEDDATE" Type="DateTime" Nullable="false" />
+          <Property Name="AVBILLEDTIME" Type="Int32" Nullable="false" />
+          <Property Name="AVORDERSTATUSCODE" Type="Int32" Nullable="false" />
+          <Property Name="AVCONSIGNMENTWAREHOUSEID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVSALESCHANNEL" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVPENDINGPMTREFERENCE" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVPENDINGPMTEFFDATE" Type="DateTime" Nullable="false" />
+          <Property Name="AVPENDINGPMTAMT" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVREMARKS" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="PAYMENT" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVPROMISEDATE" Type="DateTime" Nullable="false" />
+          <Property Name="AVPROMISETIME" Type="Int32" Nullable="false" />
+          <Property Name="AVMISCCHGCODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVORIGINALINVOICEID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVGROUPCODEID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Nullable="false" />
+          <Property Name="MODIFIEDBY" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATEDBY" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="DATAAREAID" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="AVEXTERNALORDERNUM" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AVEXTERNALACCOUNTNUM" Type="Decimal" Nullable="false" Precision="20" Scale="0" />
+          <Property Name="AVFINANCIALORDERTYPE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVSALESTYPE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVBYPASSSAR" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="AVBYPASSCREDITCHECK" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="AVBYPASSCRITMONSUBS" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="AVORDERPROCESSINGCODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVUPDATEADDRESS" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="AVADDRESSFINALDATE" Type="DateTime" Nullable="false" />
+          <Property Name="PERSONALUSEAGREEMENT" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="AVPENDINGPMTMETHOD" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVADDRESSTYPE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVCDC" Type="String" Nullable="false" MaxLength="12" Unicode="false" FixedLength="false" />
+          <Property Name="AVCITYID" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="AVCOLONIAID" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="AVCREDITPROCESSTAG" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVCUSTOMERREF" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="AVCUSTPRICETOTAL" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVDELIVERYDATE" Type="DateTime" Nullable="false" />
+          <Property Name="AVDELIVERYINSTRUCTIONTYPE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVORDERINGOPPORTUNITY" Type="Int32" Nullable="false" />
+          <Property Name="AVORIGINALORDERTYPE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVREASONCODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVTRANSDATE" Type="DateTime" Nullable="false" />
+          <Property Name="AVSHIPMENTID" Type="String" Nullable="false" MaxLength="40" Unicode="false" FixedLength="false" />
+          <Property Name="INVENTLOCATION" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PRICEDISCTABLE">
+          <Key>
+            <PropertyRef Name="AVBROCHURELINENUM" />
+            <PropertyRef Name="AVCAMPAIGNID" />
+            <PropertyRef Name="DATAAREAID" />
+          </Key>
+          <Property Name="AGREEMENT" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="ITEMCODE" Type="Int32" Nullable="false" />
+          <Property Name="ACCOUNTCODE" Type="Int32" Nullable="false" />
+          <Property Name="ITEMRELATION" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ACCOUNTRELATION" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="QUANTITYAMOUNT" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="FROMDATE" Type="DateTime" Nullable="false" />
+          <Property Name="TODATE" Type="DateTime" Nullable="false" />
+          <Property Name="AMOUNT" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="CURRENCY" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="PERCENT1" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="PERCENT2" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="DELIVERYTIME" Type="Int32" Nullable="false" />
+          <Property Name="SEARCHAGAIN" Type="Int32" Nullable="false" />
+          <Property Name="PRICEUNIT" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="RELATION" Type="Int32" Nullable="false" />
+          <Property Name="UNITID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="MARKUP" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="ALLOCATEMARKUP" Type="Int32" Nullable="false" />
+          <Property Name="MODULE" Type="Int32" Nullable="false" />
+          <Property Name="CONFIGID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVBROCHURELINENUM" Type="Int32" Nullable="false" />
+          <Property Name="AVCAMPAIGNID" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="AVITEMCLASSID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVCUSTUNITPRICE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVPRODUCTTYPE" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVBONUSPOINTEARNED" Type="Int32" Nullable="false" />
+          <Property Name="AVLINENUMTYPE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVPRIZEPROGRAMID" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="false" />
+          <Property Name="AVREDEMPTIONPOINTS" Type="Int32" Nullable="false" />
+          <Property Name="AVPRIZEVALUE" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVPRINTCODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVORDERELIGIBILITY" Type="String" Nullable="false" MaxLength="2" Unicode="false" FixedLength="false" />
+          <Property Name="AVRETURNSURCHARGEPCT" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVRETURNMONITORCODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVPOSEQUENCENUM" Type="Int32" Nullable="false" />
+          <Property Name="AVBROCHURETYPE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVBROCHUREPAGENUM" Type="Int32" Nullable="false" />
+          <Property Name="AVCOMMISIONAMT" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="AVSETCODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVCOMPONENTCOUNT" Type="Int32" Nullable="false" />
+          <Property Name="AVINVOICEDESC" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="MODIFIEDDATE" Type="DateTime" Nullable="false" />
+          <Property Name="MODIFIEDBY" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="CREATEDDATE" Type="DateTime" Nullable="false" />
+          <Property Name="CREATEDBY" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="DATAAREAID" Type="String" Nullable="false" MaxLength="3" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG4" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG5" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG6" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG7" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG8" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG9" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG10" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG3" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG2" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG1" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG11" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG12" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG13" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG14" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG15" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG16" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG17" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG18" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG19" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG20" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG21" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG22" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG23" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG24" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AVHANDLINGTAG25" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PAYMTERMID" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+          <Property Name="AVAMOUNT1" Type="Decimal" Precision="32" Scale="16" />
+          <Property Name="AVAMOUNT2" Type="Decimal" Precision="32" Scale="16" />
+          <Property Name="AVAMOUNT3" Type="Decimal" Precision="32" Scale="16" />
+          <Property Name="AVAMOUNT4" Type="Decimal" Precision="32" Scale="16" />
+          <Property Name="AVAMOUNT5" Type="Decimal" Precision="32" Scale="16" />
+        </EntityType>
+        
+        <ComplexType Name="ComplexType1" >
+          <Property Type="Decimal" Name="Property" />
+        </ComplexType>
+        <ComplexType Name="ComplexType2" />
+        <EntityType Name="AVINCENTIVELOG">
+          <Key>
+            <PropertyRef Name="CUSTACCOUNT" />
+            <PropertyRef Name="AVLOGTYPE" />
+            <PropertyRef Name="AVPOINT" />
+            <PropertyRef Name="AVAMOUNT" />
+            <PropertyRef Name="SALESID" />
+            <PropertyRef Name="AVREMARK" />
+            <PropertyRef Name="AVPOINTCODE" />
+            <PropertyRef Name="AVRECOMMENDEDREP" />
+            <PropertyRef Name="AVCAMPAIGNID" />
+            <PropertyRef Name="AVMVNOPOINTSSOURCE" />
+            <PropertyRef Name="MODIFIEDDATE" />
+            <PropertyRef Name="MODIFIEDBY" />
+            <PropertyRef Name="CREATEDDATE" />
+            <PropertyRef Name="CREATEDBY" />
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="AVADAPTERID" />
+            <PropertyRef Name="AVTAG" />
+            <PropertyRef Name="AVTAGVALUE" />
+          </Key>
+          <Property Type="String" Name="CUSTACCOUNT" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AVLOGTYPE" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="AVPOINT" Nullable="false" Precision="32" Scale="16" />
+          <Property Type="Decimal" Name="AVAMOUNT" Nullable="false" Precision="32" Scale="16" />
+          <Property Type="String" Name="SALESID" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AVREMARK" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AVPOINTCODE" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AVRECOMMENDEDREP" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AVCAMPAIGNID" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="AVMVNOPOINTSSOURCE" Nullable="false" />
+          <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="false" />
+          <Property Type="String" Name="MODIFIEDBY" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CREATEDDATE" Nullable="false" />
+          <Property Type="String" Name="CREATEDBY" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DATAAREAID" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="AVADAPTERID" Nullable="false" />
+          <Property Type="String" Name="AVTAG" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AVTAGVALUE" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AVINCENTIVETOTAL">
+          <Key>
+            <PropertyRef Name="CUSTACCOUNT" />
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="AVADAPTERID" />
+          </Key>
+          <Property Type="String" Name="CUSTACCOUNT" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="AVPOINTTOTAL" Nullable="false" Precision="32" Scale="16" />
+          <Property Type="Decimal" Name="AVAMOUNTTOTAL" Nullable="false" Precision="32" Scale="16" />
+          <Property Type="Int32" Name="AVACTIVE" Nullable="false" />
+          <Property Type="Int32" Name="AVLIMIT" Nullable="false" />
+          <Property Type="String" Name="AVPOINTCODE" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DATAAREAID" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="false" />
+          <Property Type="String" Name="MODIFIEDBY" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CREATEDDATE" Nullable="false" />
+          <Property Type="String" Name="CREATEDBY" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="AVADAPTERID" Nullable="false" />
+          <Property Type="String" Name="AVTAG" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AVTAGVALUE" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="AVADAPTERTYPE" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="AVACCUMTYPE" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AVREPCLUBLEVELHISTORY">
+          <Key>
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="REP_CLUB_TYP" />
+            <PropertyRef Name="CUSTACCOUNT" />
+            <PropertyRef Name="REP_CLUB_YR_NR" />
+            <PropertyRef Name="ACHVD_LVL_CD" />
+          </Key>
+          <Property Type="String" Name="DATAAREAID" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="REP_CLUB_TYP" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUSTACCOUNT" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="REP_CLUB_YR_NR" Nullable="false" />
+          <Property Type="Int16" Name="ACHVD_LVL_CD" Nullable="false" />
+          <Property Type="String" Name="ACHVD_CMPGN" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="false" />
+          <Property Type="String" Name="MODIFIEDBY" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CREATEDDATE" Nullable="false" />
+          <Property Type="String" Name="CREATEDBY" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AVREPCLUBTRANLHISTORY">
+          <Key>
+            <PropertyRef Name="DATAAREAID" />
+            <PropertyRef Name="CUSTACCOUNT" />
+            <PropertyRef Name="REP_CLUB_TYP" />
+            <PropertyRef Name="REP_CLUB_YR_NR" />
+            <PropertyRef Name="RECID" />
+          </Key>
+          <Property Type="String" Name="DATAAREAID" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="CUSTACCOUNT" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="REP_CLUB_TYP" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="REP_CLUB_YR_NR" Nullable="false" />
+          <Property Type="Decimal" Name="RECID" Nullable="false" Precision="20" Scale="0" />
+          <Property Type="Decimal" Name="ADJST_AMT" Nullable="false" Precision="15" Scale="3" />
+          <Property Type="DateTime" Name="MODIFIEDDATE" Nullable="false" />
+          <Property Type="String" Name="MODIFIEDBY" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CREATEDDATE" Nullable="false" />
+          <Property Type="String" Name="CREATEDBY" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProbaStoreContainer" CdmEntityContainer="NativeEntities">
+          <EntitySetMapping Name="AVCODETABLE">
+            <EntityTypeMapping TypeName="Proba.AVCODETABLE">
+              <MappingFragment StoreEntitySet="AVCODETABLE">
+                <ScalarProperty Name="AVDESCRIPTION" ColumnName="AVDESCRIPTION" />
+                <ScalarProperty Name="AVCODEID" ColumnName="AVCODEID" />
+                <ScalarProperty Name="AVPARENTID" ColumnName="AVPARENTID" />
+                <ScalarProperty Name="AVCODETYPE" ColumnName="AVCODETYPE" />
+                <ScalarProperty Name="USERID" ColumnName="USERID" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDTIME" ColumnName="MODIFIEDTIME" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDTIME" ColumnName="CREATEDTIME" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AVSHORTPENDINGLINES">
+            <EntityTypeMapping TypeName="Proba.AVSHORTPENDINGLINES">
+              <MappingFragment StoreEntitySet="AVSHORTPENDINGLINES">
+                <ScalarProperty Name="CUSTACCOUNT" ColumnName="CUSTACCOUNT" />
+                <ScalarProperty Name="AVORDERNUM" ColumnName="AVORDERNUM" />
+                <ScalarProperty Name="AVPOVERSIONNUM" ColumnName="AVPOVERSIONNUM" />
+                <ScalarProperty Name="AVCAMPAIGNSTORED" ColumnName="AVCAMPAIGNSTORED" />
+                <ScalarProperty Name="AVCAMPAIGNOFPRICE" ColumnName="AVCAMPAIGNOFPRICE" />
+                <ScalarProperty Name="AVBROCHURELINENUM" ColumnName="AVBROCHURELINENUM" />
+                <ScalarProperty Name="ITEMID" ColumnName="ITEMID" />
+                <ScalarProperty Name="AVITEMSOURCE" ColumnName="AVITEMSOURCE" />
+                <ScalarProperty Name="QTYORDERED" ColumnName="QTYORDERED" />
+                <ScalarProperty Name="AVCUSTPRICETOTAL" ColumnName="AVCUSTPRICETOTAL" />
+                <ScalarProperty Name="AVCUSTUNITPRICE" ColumnName="AVCUSTUNITPRICE" />
+                <ScalarProperty Name="AVNUMBERFOR" ColumnName="AVNUMBERFOR" />
+                <ScalarProperty Name="AVCOMMISSIONRATE" ColumnName="AVCOMMISSIONRATE" />
+                <ScalarProperty Name="AVADJUSTREASONCODE" ColumnName="AVADJUSTREASONCODE" />
+                <ScalarProperty Name="AVREPLACEMENTLINENUM" ColumnName="AVREPLACEMENTLINENUM" />
+                <ScalarProperty Name="AVREPLACEMENTITEMID" ColumnName="AVREPLACEMENTITEMID" />
+                <ScalarProperty Name="SALESID" ColumnName="SALESID" />
+                <ScalarProperty Name="CURRENCYCODE" ColumnName="CURRENCYCODE" />
+                <ScalarProperty Name="SEQNUM" ColumnName="SEQNUM" />
+                <ScalarProperty Name="AVBONUSCOMMISSIONRATE" ColumnName="AVBONUSCOMMISSIONRATE" />
+                <ScalarProperty Name="AVNETSALES" ColumnName="AVNETSALES" />
+                <ScalarProperty Name="AVAWARDSALES" ColumnName="AVAWARDSALES" />
+                <ScalarProperty Name="AVDOUBLEDOLLARS" ColumnName="AVDOUBLEDOLLARS" />
+                <ScalarProperty Name="AVORDERSIZE" ColumnName="AVORDERSIZE" />
+                <ScalarProperty Name="AVITEMSTATUSCODE" ColumnName="AVITEMSTATUSCODE" />
+                <ScalarProperty Name="AVCONSIGNMENTWAREHOUSEID" ColumnName="AVCONSIGNMENTWAREHOUSEID" />
+                <ScalarProperty Name="AVOFFERID" ColumnName="AVOFFERID" />
+                <ScalarProperty Name="INVENTTRANSID" ColumnName="INVENTTRANSID" />
+                <ScalarProperty Name="AVDIMIDCODE" ColumnName="AVDIMIDCODE" />
+                <ScalarProperty Name="AVITEMCLASSID" ColumnName="AVITEMCLASSID" />
+                <ScalarProperty Name="AVCOMPONENTCOUNT" ColumnName="AVCOMPONENTCOUNT" />
+                <ScalarProperty Name="AVSETCODE" ColumnName="AVSETCODE" />
+                <ScalarProperty Name="AVPRODUCTTYPE" ColumnName="AVPRODUCTTYPE" />
+                <ScalarProperty Name="SCRAP" ColumnName="SCRAP" />
+                <ScalarProperty Name="AVRETURNLINERECID" ColumnName="AVRETURNLINERECID" />
+                <ScalarProperty Name="INVENTDIMID" ColumnName="INVENTDIMID" />
+                <ScalarProperty Name="AVHANDLINGTAG1" ColumnName="AVHANDLINGTAG1" />
+                <ScalarProperty Name="AVSETLINESEQUENCENUM" ColumnName="AVSETLINESEQUENCENUM" />
+                <ScalarProperty Name="AVINVOICEDESC" ColumnName="AVINVOICEDESC" />
+                <ScalarProperty Name="AVITEMSOURCEORIGINAL" ColumnName="AVITEMSOURCEORIGINAL" />
+                <ScalarProperty Name="AVINCENTIVEID" ColumnName="AVINCENTIVEID" />
+                <ScalarProperty Name="AVITEMSOURCERETURN" ColumnName="AVITEMSOURCERETURN" />
+                <ScalarProperty Name="AVACTION" ColumnName="AVACTION" />
+                <ScalarProperty Name="AVSHORTRECID" ColumnName="AVSHORTRECID" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="AVDISCAMT" ColumnName="AVDISCAMT" />
+                <ScalarProperty Name="TAXRATE" ColumnName="TAXRATE" />
+                <ScalarProperty Name="RETURNDOCNUM" ColumnName="RETURNDOCNUM" />
+                <ScalarProperty Name="AVEXTERNALORDERNUM" ColumnName="AVEXTERNALORDERNUM" />
+                <ScalarProperty Name="AVPERSONALUSE" ColumnName="AVPERSONALUSE" />
+                <ScalarProperty Name="AVRETURNSFORMDOCNUM" ColumnName="AVRETURNSFORMDOCNUM" />
+                <ScalarProperty Name="AVPAYOFFINCID" ColumnName="AVPAYOFFINCID" />
+                <ScalarProperty Name="AVCUSTUNITPRICEPRG" ColumnName="AVCUSTUNITPRICEPRG" />
+                <ScalarProperty Name="AVCUSTPRICETOTALPRG" ColumnName="AVCUSTPRICETOTALPRG" />
+                <ScalarProperty Name="AVPAICOLOR" ColumnName="AVPAICOLOR" />
+                <ScalarProperty Name="AVPAIDATE" ColumnName="AVPAIDATE" />
+                <ScalarProperty Name="AVREPLACEMENTCAMPAIGN" ColumnName="AVREPLACEMENTCAMPAIGN" />
+                <ScalarProperty Name="AVREPLACEMENTCUSTUNITPRICE" ColumnName="AVREPLACEMENTCUSTUNITPRICE" />
+                <ScalarProperty Name="AVHANDLINGTAG3" ColumnName="AVHANDLINGTAG3" />
+                <ScalarProperty Name="AVNBROFCAMPAIGNSSHORTED" ColumnName="AVNBROFCAMPAIGNSSHORTED" />
+                <ScalarProperty Name="AVNBROFTIMESSHORTED" ColumnName="AVNBROFTIMESSHORTED" />
+                <ScalarProperty Name="AVPRIZEVALUE" ColumnName="AVPRIZEVALUE" />
+                <ScalarProperty Name="AVTRANSFERTODIMIDCODE" ColumnName="AVTRANSFERTODIMIDCODE" />
+                <ScalarProperty Name="AVSPECIALACTION" ColumnName="AVSPECIALACTION" />
+                <ScalarProperty Name="AVDELETEDBY" ColumnName="AVDELETEDBY" />
+                <ScalarProperty Name="AVDELETEDDATE" ColumnName="AVDELETEDDATE" />
+                <ScalarProperty Name="AVSKIPDELETION" ColumnName="AVSKIPDELETION" />
+                <ScalarProperty Name="AVBACKORDERSOURCE" ColumnName="AVBACKORDERSOURCE" />
+                <ScalarProperty Name="AVREASONCODE" ColumnName="AVREASONCODE" />
+                <ScalarProperty Name="RECID" ColumnName="RECID" />
+                <ScalarProperty Name="AVPENDINGCREDITSTATUSCODE" ColumnName="AVPENDINGCREDITSTATUSCODE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AVUNBILLEDORDERLINES">
+            <EntityTypeMapping TypeName="Proba.AVUNBILLEDORDERLINES">
+              <MappingFragment StoreEntitySet="AVUNBILLEDORDERLINES">
+                <ScalarProperty Name="AVREASONCODE" ColumnName="AVREASONCODE" />
+                <ScalarProperty Name="CUSTACCOUNT" ColumnName="CUSTACCOUNT" />
+                <ScalarProperty Name="AVORDERNUM" ColumnName="AVORDERNUM" />
+                <ScalarProperty Name="AVPOVERSIONNUM" ColumnName="AVPOVERSIONNUM" />
+                <ScalarProperty Name="AVCAMPAIGNSTORED" ColumnName="AVCAMPAIGNSTORED" />
+                <ScalarProperty Name="AVCAMPAIGNOFPRICE" ColumnName="AVCAMPAIGNOFPRICE" />
+                <ScalarProperty Name="AVBROCHURELINENUM" ColumnName="AVBROCHURELINENUM" />
+                <ScalarProperty Name="ITEMID" ColumnName="ITEMID" />
+                <ScalarProperty Name="AVITEMSOURCE" ColumnName="AVITEMSOURCE" />
+                <ScalarProperty Name="QTYORDERED" ColumnName="QTYORDERED" />
+                <ScalarProperty Name="AVCUSTPRICETOTAL" ColumnName="AVCUSTPRICETOTAL" />
+                <ScalarProperty Name="AVCUSTUNITPRICE" ColumnName="AVCUSTUNITPRICE" />
+                <ScalarProperty Name="AVNUMBERFOR" ColumnName="AVNUMBERFOR" />
+                <ScalarProperty Name="AVCOMMISSIONRATE" ColumnName="AVCOMMISSIONRATE" />
+                <ScalarProperty Name="AVADJUSTREASONCODE" ColumnName="AVADJUSTREASONCODE" />
+                <ScalarProperty Name="AVREPLACEMENTLINENUM" ColumnName="AVREPLACEMENTLINENUM" />
+                <ScalarProperty Name="AVREPLACEMENTITEMID" ColumnName="AVREPLACEMENTITEMID" />
+                <ScalarProperty Name="SALESID" ColumnName="SALESID" />
+                <ScalarProperty Name="CURRENCYCODE" ColumnName="CURRENCYCODE" />
+                <ScalarProperty Name="SEQNUM" ColumnName="SEQNUM" />
+                <ScalarProperty Name="AVBONUSCOMMISSIONRATE" ColumnName="AVBONUSCOMMISSIONRATE" />
+                <ScalarProperty Name="AVNETSALES" ColumnName="AVNETSALES" />
+                <ScalarProperty Name="AVAWARDSALES" ColumnName="AVAWARDSALES" />
+                <ScalarProperty Name="AVDOUBLEDOLLARS" ColumnName="AVDOUBLEDOLLARS" />
+                <ScalarProperty Name="AVORDERSIZE" ColumnName="AVORDERSIZE" />
+                <ScalarProperty Name="AVITEMSTATUSCODE" ColumnName="AVITEMSTATUSCODE" />
+                <ScalarProperty Name="AVCONSIGNMENTWAREHOUSEID" ColumnName="AVCONSIGNMENTWAREHOUSEID" />
+                <ScalarProperty Name="AVOFFERID" ColumnName="AVOFFERID" />
+                <ScalarProperty Name="INVENTTRANSID" ColumnName="INVENTTRANSID" />
+                <ScalarProperty Name="AVDIMIDCODE" ColumnName="AVDIMIDCODE" />
+                <ScalarProperty Name="AVITEMCLASSID" ColumnName="AVITEMCLASSID" />
+                <ScalarProperty Name="AVCOMPONENTCOUNT" ColumnName="AVCOMPONENTCOUNT" />
+                <ScalarProperty Name="AVSETCODE" ColumnName="AVSETCODE" />
+                <ScalarProperty Name="AVPRODUCTTYPE" ColumnName="AVPRODUCTTYPE" />
+                <ScalarProperty Name="SCRAP" ColumnName="SCRAP" />
+                <ScalarProperty Name="AVRETURNLINERECID" ColumnName="AVRETURNLINERECID" />
+                <ScalarProperty Name="INVENTDIMID" ColumnName="INVENTDIMID" />
+                <ScalarProperty Name="AVHANDLINGTAG1" ColumnName="AVHANDLINGTAG1" />
+                <ScalarProperty Name="AVSETLINESEQUENCENUM" ColumnName="AVSETLINESEQUENCENUM" />
+                <ScalarProperty Name="AVINVOICEDESC" ColumnName="AVINVOICEDESC" />
+                <ScalarProperty Name="AVITEMSOURCEORIGINAL" ColumnName="AVITEMSOURCEORIGINAL" />
+                <ScalarProperty Name="AVINCENTIVEID" ColumnName="AVINCENTIVEID" />
+                <ScalarProperty Name="AVITEMSOURCERETURN" ColumnName="AVITEMSOURCERETURN" />
+                <ScalarProperty Name="AVACTION" ColumnName="AVACTION" />
+                <ScalarProperty Name="AVSHORTRECID" ColumnName="AVSHORTRECID" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="AVDISCAMT" ColumnName="AVDISCAMT" />
+                <ScalarProperty Name="TAXRATE" ColumnName="TAXRATE" />
+                <ScalarProperty Name="RETURNDOCNUM" ColumnName="RETURNDOCNUM" />
+                <ScalarProperty Name="AVEXTERNALORDERNUM" ColumnName="AVEXTERNALORDERNUM" />
+                <ScalarProperty Name="AVPERSONALUSE" ColumnName="AVPERSONALUSE" />
+                <ScalarProperty Name="AVRETURNSFORMDOCNUM" ColumnName="AVRETURNSFORMDOCNUM" />
+                <ScalarProperty Name="AVPAYOFFINCID" ColumnName="AVPAYOFFINCID" />
+                <ScalarProperty Name="AVCUSTUNITPRICEPRG" ColumnName="AVCUSTUNITPRICEPRG" />
+                <ScalarProperty Name="AVCUSTPRICETOTALPRG" ColumnName="AVCUSTPRICETOTALPRG" />
+                <ScalarProperty Name="AVPAICOLOR" ColumnName="AVPAICOLOR" />
+                <ScalarProperty Name="AVPAIDATE" ColumnName="AVPAIDATE" />
+                <ScalarProperty Name="AVREPLACEMENTCAMPAIGN" ColumnName="AVREPLACEMENTCAMPAIGN" />
+                <ScalarProperty Name="AVREPLACEMENTCUSTUNITPRICE" ColumnName="AVREPLACEMENTCUSTUNITPRICE" />
+                <ScalarProperty Name="AVHANDLINGTAG3" ColumnName="AVHANDLINGTAG3" />
+                <ScalarProperty Name="AVNBROFCAMPAIGNSSHORTED" ColumnName="AVNBROFCAMPAIGNSSHORTED" />
+                <ScalarProperty Name="AVNBROFTIMESSHORTED" ColumnName="AVNBROFTIMESSHORTED" />
+                <ScalarProperty Name="AVPRIZEVALUE" ColumnName="AVPRIZEVALUE" />
+                <ScalarProperty Name="AVTRANSFERTODIMIDCODE" ColumnName="AVTRANSFERTODIMIDCODE" />
+                <ScalarProperty Name="RECID" ColumnName="RECID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AVUNBILLEDORDERS">
+            <EntityTypeMapping TypeName="Proba.AVUNBILLEDORDERS">
+              <MappingFragment StoreEntitySet="AVUNBILLEDORDERS">
+                <ScalarProperty Name="AVORDERNUM" ColumnName="AVORDERNUM" />
+                <ScalarProperty Name="AVCAMPAIGNOFORDER" ColumnName="AVCAMPAIGNOFORDER" />
+                <ScalarProperty Name="AVPOVERSIONNUM" ColumnName="AVPOVERSIONNUM" />
+                <ScalarProperty Name="CUSTACCOUNT" ColumnName="CUSTACCOUNT" />
+                <ScalarProperty Name="AVMAILPLAN" ColumnName="AVMAILPLAN" />
+                <ScalarProperty Name="AVORDERSOURCE" ColumnName="AVORDERSOURCE" />
+                <ScalarProperty Name="AVORDERTYPE" ColumnName="AVORDERTYPE" />
+                <ScalarProperty Name="AVPRIORITYCODE" ColumnName="AVPRIORITYCODE" />
+                <ScalarProperty Name="AVORDERSTATUS" ColumnName="AVORDERSTATUS" />
+                <ScalarProperty Name="AVSHIPIMMEDCODE" ColumnName="AVSHIPIMMEDCODE" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="STATE" ColumnName="STATE" />
+                <ScalarProperty Name="ZIPCODE" ColumnName="ZIPCODE" />
+                <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+                <ScalarProperty Name="CURRENCYCODE" ColumnName="CURRENCYCODE" />
+                <ScalarProperty Name="AVNUMCUSTSERVED" ColumnName="AVNUMCUSTSERVED" />
+                <ScalarProperty Name="SALESID" ColumnName="SALESID" />
+                <ScalarProperty Name="AVORDERRELEASECOMMENTS" ColumnName="AVORDERRELEASECOMMENTS" />
+                <ScalarProperty Name="AVBILLEDDATE" ColumnName="AVBILLEDDATE" />
+                <ScalarProperty Name="AVBILLEDTIME" ColumnName="AVBILLEDTIME" />
+                <ScalarProperty Name="AVORDERSTATUSCODE" ColumnName="AVORDERSTATUSCODE" />
+                <ScalarProperty Name="AVCONSIGNMENTWAREHOUSEID" ColumnName="AVCONSIGNMENTWAREHOUSEID" />
+                <ScalarProperty Name="AVSALESCHANNEL" ColumnName="AVSALESCHANNEL" />
+                <ScalarProperty Name="AVPENDINGPMTREFERENCE" ColumnName="AVPENDINGPMTREFERENCE" />
+                <ScalarProperty Name="AVPENDINGPMTEFFDATE" ColumnName="AVPENDINGPMTEFFDATE" />
+                <ScalarProperty Name="AVPENDINGPMTAMT" ColumnName="AVPENDINGPMTAMT" />
+                <ScalarProperty Name="AVREMARKS" ColumnName="AVREMARKS" />
+                <ScalarProperty Name="PAYMENT" ColumnName="PAYMENT" />
+                <ScalarProperty Name="AVPROMISEDATE" ColumnName="AVPROMISEDATE" />
+                <ScalarProperty Name="AVPROMISETIME" ColumnName="AVPROMISETIME" />
+                <ScalarProperty Name="AVMISCCHGCODE" ColumnName="AVMISCCHGCODE" />
+                <ScalarProperty Name="AVORIGINALINVOICEID" ColumnName="AVORIGINALINVOICEID" />
+                <ScalarProperty Name="AVGROUPCODEID" ColumnName="AVGROUPCODEID" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="AVEXTERNALORDERNUM" ColumnName="AVEXTERNALORDERNUM" />
+                <ScalarProperty Name="AVEXTERNALACCOUNTNUM" ColumnName="AVEXTERNALACCOUNTNUM" />
+                <ScalarProperty Name="AVFINANCIALORDERTYPE" ColumnName="AVFINANCIALORDERTYPE" />
+                <ScalarProperty Name="AVSALESTYPE" ColumnName="AVSALESTYPE" />
+                <ScalarProperty Name="AVBYPASSSAR" ColumnName="AVBYPASSSAR" />
+                <ScalarProperty Name="AVBYPASSCREDITCHECK" ColumnName="AVBYPASSCREDITCHECK" />
+                <ScalarProperty Name="AVBYPASSCRITMONSUBS" ColumnName="AVBYPASSCRITMONSUBS" />
+                <ScalarProperty Name="AVORDERPROCESSINGCODE" ColumnName="AVORDERPROCESSINGCODE" />
+                <ScalarProperty Name="AVUPDATEADDRESS" ColumnName="AVUPDATEADDRESS" />
+                <ScalarProperty Name="AVADDRESSFINALDATE" ColumnName="AVADDRESSFINALDATE" />
+                <ScalarProperty Name="PERSONALUSEAGREEMENT" ColumnName="PERSONALUSEAGREEMENT" />
+                <ScalarProperty Name="AVPENDINGPMTMETHOD" ColumnName="AVPENDINGPMTMETHOD" />
+                <ScalarProperty Name="AVADDRESSTYPE" ColumnName="AVADDRESSTYPE" />
+                <ScalarProperty Name="AVCDC" ColumnName="AVCDC" />
+                <ScalarProperty Name="AVCITYID" ColumnName="AVCITYID" />
+                <ScalarProperty Name="AVCOLONIAID" ColumnName="AVCOLONIAID" />
+                <ScalarProperty Name="AVCREDITPROCESSTAG" ColumnName="AVCREDITPROCESSTAG" />
+                <ScalarProperty Name="AVCUSTOMERREF" ColumnName="AVCUSTOMERREF" />
+                <ScalarProperty Name="AVCUSTPRICETOTAL" ColumnName="AVCUSTPRICETOTAL" />
+                <ScalarProperty Name="AVDELIVERYDATE" ColumnName="AVDELIVERYDATE" />
+                <ScalarProperty Name="AVDELIVERYINSTRUCTIONTYPE" ColumnName="AVDELIVERYINSTRUCTIONTYPE" />
+                <ScalarProperty Name="AVORDERINGOPPORTUNITY" ColumnName="AVORDERINGOPPORTUNITY" />
+                <ScalarProperty Name="AVORIGINALORDERTYPE" ColumnName="AVORIGINALORDERTYPE" />
+                <ScalarProperty Name="AVREASONCODE" ColumnName="AVREASONCODE" />
+                <ScalarProperty Name="AVTRANSDATE" ColumnName="AVTRANSDATE" />
+                <ScalarProperty Name="AVSHIPMENTID" ColumnName="AVSHIPMENTID" />
+                <ScalarProperty Name="INVENTLOCATION" ColumnName="INVENTLOCATION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRICEDISCTABLE">
+            <EntityTypeMapping TypeName="Proba.PRICEDISCTABLE">
+              <MappingFragment StoreEntitySet="PRICEDISCTABLE">
+                <ScalarProperty Name="AGREEMENT" ColumnName="AGREEMENT" />
+                <ScalarProperty Name="ITEMCODE" ColumnName="ITEMCODE" />
+                <ScalarProperty Name="ACCOUNTCODE" ColumnName="ACCOUNTCODE" />
+                <ScalarProperty Name="ITEMRELATION" ColumnName="ITEMRELATION" />
+                <ScalarProperty Name="ACCOUNTRELATION" ColumnName="ACCOUNTRELATION" />
+                <ScalarProperty Name="QUANTITYAMOUNT" ColumnName="QUANTITYAMOUNT" />
+                <ScalarProperty Name="FROMDATE" ColumnName="FROMDATE" />
+                <ScalarProperty Name="TODATE" ColumnName="TODATE" />
+                <ScalarProperty Name="AMOUNT" ColumnName="AMOUNT" />
+                <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+                <ScalarProperty Name="PERCENT1" ColumnName="PERCENT1" />
+                <ScalarProperty Name="PERCENT2" ColumnName="PERCENT2" />
+                <ScalarProperty Name="DELIVERYTIME" ColumnName="DELIVERYTIME" />
+                <ScalarProperty Name="SEARCHAGAIN" ColumnName="SEARCHAGAIN" />
+                <ScalarProperty Name="PRICEUNIT" ColumnName="PRICEUNIT" />
+                <ScalarProperty Name="RELATION" ColumnName="RELATION" />
+                <ScalarProperty Name="UNITID" ColumnName="UNITID" />
+                <ScalarProperty Name="MARKUP" ColumnName="MARKUP" />
+                <ScalarProperty Name="ALLOCATEMARKUP" ColumnName="ALLOCATEMARKUP" />
+                <ScalarProperty Name="MODULE" ColumnName="MODULE" />
+                <ScalarProperty Name="CONFIGID" ColumnName="CONFIGID" />
+                <ScalarProperty Name="AVBROCHURELINENUM" ColumnName="AVBROCHURELINENUM" />
+                <ScalarProperty Name="AVCAMPAIGNID" ColumnName="AVCAMPAIGNID" />
+                <ScalarProperty Name="AVITEMCLASSID" ColumnName="AVITEMCLASSID" />
+                <ScalarProperty Name="AVCUSTUNITPRICE" ColumnName="AVCUSTUNITPRICE" />
+                <ScalarProperty Name="AVPRODUCTTYPE" ColumnName="AVPRODUCTTYPE" />
+                <ScalarProperty Name="AVBONUSPOINTEARNED" ColumnName="AVBONUSPOINTEARNED" />
+                <ScalarProperty Name="AVLINENUMTYPE" ColumnName="AVLINENUMTYPE" />
+                <ScalarProperty Name="AVPRIZEPROGRAMID" ColumnName="AVPRIZEPROGRAMID" />
+                <ScalarProperty Name="AVREDEMPTIONPOINTS" ColumnName="AVREDEMPTIONPOINTS" />
+                <ScalarProperty Name="AVPRIZEVALUE" ColumnName="AVPRIZEVALUE" />
+                <ScalarProperty Name="AVPRINTCODE" ColumnName="AVPRINTCODE" />
+                <ScalarProperty Name="AVORDERELIGIBILITY" ColumnName="AVORDERELIGIBILITY" />
+                <ScalarProperty Name="AVRETURNSURCHARGEPCT" ColumnName="AVRETURNSURCHARGEPCT" />
+                <ScalarProperty Name="AVRETURNMONITORCODE" ColumnName="AVRETURNMONITORCODE" />
+                <ScalarProperty Name="AVPOSEQUENCENUM" ColumnName="AVPOSEQUENCENUM" />
+                <ScalarProperty Name="AVBROCHURETYPE" ColumnName="AVBROCHURETYPE" />
+                <ScalarProperty Name="AVBROCHUREPAGENUM" ColumnName="AVBROCHUREPAGENUM" />
+                <ScalarProperty Name="AVCOMMISIONAMT" ColumnName="AVCOMMISIONAMT" />
+                <ScalarProperty Name="AVSETCODE" ColumnName="AVSETCODE" />
+                <ScalarProperty Name="AVCOMPONENTCOUNT" ColumnName="AVCOMPONENTCOUNT" />
+                <ScalarProperty Name="AVINVOICEDESC" ColumnName="AVINVOICEDESC" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="AVHANDLINGTAG4" ColumnName="AVHANDLINGTAG4" />
+                <ScalarProperty Name="AVHANDLINGTAG5" ColumnName="AVHANDLINGTAG5" />
+                <ScalarProperty Name="AVHANDLINGTAG6" ColumnName="AVHANDLINGTAG6" />
+                <ScalarProperty Name="AVHANDLINGTAG7" ColumnName="AVHANDLINGTAG7" />
+                <ScalarProperty Name="AVHANDLINGTAG8" ColumnName="AVHANDLINGTAG8" />
+                <ScalarProperty Name="AVHANDLINGTAG9" ColumnName="AVHANDLINGTAG9" />
+                <ScalarProperty Name="AVHANDLINGTAG10" ColumnName="AVHANDLINGTAG10" />
+                <ScalarProperty Name="AVHANDLINGTAG3" ColumnName="AVHANDLINGTAG3" />
+                <ScalarProperty Name="AVHANDLINGTAG2" ColumnName="AVHANDLINGTAG2" />
+                <ScalarProperty Name="AVHANDLINGTAG1" ColumnName="AVHANDLINGTAG1" />
+                <ScalarProperty Name="AVHANDLINGTAG11" ColumnName="AVHANDLINGTAG11" />
+                <ScalarProperty Name="AVHANDLINGTAG12" ColumnName="AVHANDLINGTAG12" />
+                <ScalarProperty Name="AVHANDLINGTAG13" ColumnName="AVHANDLINGTAG13" />
+                <ScalarProperty Name="AVHANDLINGTAG14" ColumnName="AVHANDLINGTAG14" />
+                <ScalarProperty Name="AVHANDLINGTAG15" ColumnName="AVHANDLINGTAG15" />
+                <ScalarProperty Name="AVHANDLINGTAG16" ColumnName="AVHANDLINGTAG16" />
+                <ScalarProperty Name="AVHANDLINGTAG17" ColumnName="AVHANDLINGTAG17" />
+                <ScalarProperty Name="AVHANDLINGTAG18" ColumnName="AVHANDLINGTAG18" />
+                <ScalarProperty Name="AVHANDLINGTAG19" ColumnName="AVHANDLINGTAG19" />
+                <ScalarProperty Name="AVHANDLINGTAG20" ColumnName="AVHANDLINGTAG20" />
+                <ScalarProperty Name="AVHANDLINGTAG21" ColumnName="AVHANDLINGTAG21" />
+                <ScalarProperty Name="AVHANDLINGTAG22" ColumnName="AVHANDLINGTAG22" />
+                <ScalarProperty Name="AVHANDLINGTAG23" ColumnName="AVHANDLINGTAG23" />
+                <ScalarProperty Name="AVHANDLINGTAG24" ColumnName="AVHANDLINGTAG24" />
+                <ScalarProperty Name="AVHANDLINGTAG25" ColumnName="AVHANDLINGTAG25" />
+                <ScalarProperty Name="PAYMTERMID" ColumnName="PAYMTERMID" />
+                <ScalarProperty Name="AVAMOUNT1" ColumnName="AVAMOUNT1" />
+                <ScalarProperty Name="AVAMOUNT2" ColumnName="AVAMOUNT2" />
+                <ScalarProperty Name="AVAMOUNT3" ColumnName="AVAMOUNT3" />
+                <ScalarProperty Name="AVAMOUNT4" ColumnName="AVAMOUNT4" />
+                <ScalarProperty Name="AVAMOUNT5" ColumnName="AVAMOUNT5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AVINCENTIVELOG">
+            <EntityTypeMapping TypeName="Proba.AVINCENTIVELOG">
+              <MappingFragment StoreEntitySet="AVINCENTIVELOG">
+                <ScalarProperty Name="AVTAGVALUE" ColumnName="AVTAGVALUE" />
+                <ScalarProperty Name="AVTAG" ColumnName="AVTAG" />
+                <ScalarProperty Name="AVADAPTERID" ColumnName="AVADAPTERID" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="AVMVNOPOINTSSOURCE" ColumnName="AVMVNOPOINTSSOURCE" />
+                <ScalarProperty Name="AVCAMPAIGNID" ColumnName="AVCAMPAIGNID" />
+                <ScalarProperty Name="AVRECOMMENDEDREP" ColumnName="AVRECOMMENDEDREP" />
+                <ScalarProperty Name="AVPOINTCODE" ColumnName="AVPOINTCODE" />
+                <ScalarProperty Name="AVREMARK" ColumnName="AVREMARK" />
+                <ScalarProperty Name="SALESID" ColumnName="SALESID" />
+                <ScalarProperty Name="AVAMOUNT" ColumnName="AVAMOUNT" />
+                <ScalarProperty Name="AVPOINT" ColumnName="AVPOINT" />
+                <ScalarProperty Name="AVLOGTYPE" ColumnName="AVLOGTYPE" />
+                <ScalarProperty Name="CUSTACCOUNT" ColumnName="CUSTACCOUNT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AVINCENTIVETOTAL">
+            <EntityTypeMapping TypeName="Proba.AVINCENTIVETOTAL">
+              <MappingFragment StoreEntitySet="AVINCENTIVETOTAL">
+                <ScalarProperty Name="AVACCUMTYPE" ColumnName="AVACCUMTYPE" />
+                <ScalarProperty Name="AVADAPTERTYPE" ColumnName="AVADAPTERTYPE" />
+                <ScalarProperty Name="AVTAGVALUE" ColumnName="AVTAGVALUE" />
+                <ScalarProperty Name="AVTAG" ColumnName="AVTAG" />
+                <ScalarProperty Name="AVADAPTERID" ColumnName="AVADAPTERID" />
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+                <ScalarProperty Name="AVPOINTCODE" ColumnName="AVPOINTCODE" />
+                <ScalarProperty Name="AVLIMIT" ColumnName="AVLIMIT" />
+                <ScalarProperty Name="AVACTIVE" ColumnName="AVACTIVE" />
+                <ScalarProperty Name="AVAMOUNTTOTAL" ColumnName="AVAMOUNTTOTAL" />
+                <ScalarProperty Name="AVPOINTTOTAL" ColumnName="AVPOINTTOTAL" />
+                <ScalarProperty Name="CUSTACCOUNT" ColumnName="CUSTACCOUNT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AVREPCLUBLEVELHISTORY">
+            <EntityTypeMapping TypeName="Proba.AVREPCLUBLEVELHISTORY">
+              <MappingFragment StoreEntitySet="AVREPCLUBLEVELHISTORY">
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="ACHVD_CMPGN" ColumnName="ACHVD_CMPGN" />
+                <ScalarProperty Name="ACHVD_LVL_CD" ColumnName="ACHVD_LVL_CD" />
+                <ScalarProperty Name="REP_CLUB_YR_NR" ColumnName="REP_CLUB_YR_NR" />
+                <ScalarProperty Name="CUSTACCOUNT" ColumnName="CUSTACCOUNT" />
+                <ScalarProperty Name="REP_CLUB_TYP" ColumnName="REP_CLUB_TYP" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AVREPCLUBTRANLHISTORY">
+            <EntityTypeMapping TypeName="Proba.AVREPCLUBTRANLHISTORY">
+              <MappingFragment StoreEntitySet="AVREPCLUBTRANLHISTORY">
+                <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+                <ScalarProperty Name="CREATEDDATE" ColumnName="CREATEDDATE" />
+                <ScalarProperty Name="MODIFIEDBY" ColumnName="MODIFIEDBY" />
+                <ScalarProperty Name="MODIFIEDDATE" ColumnName="MODIFIEDDATE" />
+                <ScalarProperty Name="ADJST_AMT" ColumnName="ADJST_AMT" />
+                <ScalarProperty Name="RECID" ColumnName="RECID" />
+                <ScalarProperty Name="REP_CLUB_YR_NR" ColumnName="REP_CLUB_YR_NR" />
+                <ScalarProperty Name="REP_CLUB_TYP" ColumnName="REP_CLUB_TYP" />
+                <ScalarProperty Name="CUSTACCOUNT" ColumnName="CUSTACCOUNT" />
+                <ScalarProperty Name="DATAAREAID" ColumnName="DATAAREAID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="DDLGenerationTemplate" Value="$(VSEFTools)\DBGen\SSDLToOracle.tt" />
+        <DesignerProperty Name="DatabaseGenerationWorkflow" Value="$(VSEFTools)\DBGen\Generate Oracle Via T4 (TPT).xaml" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1" ZoomLevel="32">
+      
+        <EntityTypeShape EntityType="Proba.AVCODETABLE" Width="1.5" PointX="10.75" PointY="2.625" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proba.AVSHORTPENDINGLINES" Width="1.5" PointX="2.75" PointY="0.625" Height="15.441386718750003" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proba.AVUNBILLEDORDERLINES" Width="1.5" PointX="4.75" PointY="0.75" Height="14.095276692708332" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proba.AVUNBILLEDORDERS" Width="1.5" PointX="6.75" PointY="0.75" Height="13.518372395833332" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proba.PRICEDISCTABLE" Width="1.5" PointX="8.75" PointY="0.75" Height="16.018291015625003" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proba.AVINCENTIVELOG" Width="1.5" PointX="11.375" PointY="6.75" Height="4.480205078125" />
+        <EntityTypeShape EntityType="Proba.AVINCENTIVETOTAL" Width="1.5" PointX="11.375" PointY="12.75" Height="4.0956022135416674" />
+        <EntityTypeShape EntityType="Proba.AVREPCLUBLEVELHISTORY" Width="1.5" PointX="13.375" PointY="0.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="Proba.AVREPCLUBTRANLHISTORY" Width="1.5" PointX="13.375" PointY="4.75" Height="2.9417936197916674" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

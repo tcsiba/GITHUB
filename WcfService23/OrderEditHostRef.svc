@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="VB" Debug="true" Service="WcfService23.Service1" CodeBehind="OrderEditHostRef.svc.vb" %>
